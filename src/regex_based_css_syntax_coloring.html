@@ -1,0 +1,1002 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Regular Expression Based CSS Syntax Coloring (Version 0.7)</title>
+    <link rel="stylesheet" type="text/css" href="css_regex_layout.css"/>
+    <link rel="stylesheet" type="text/css" href="css_regex.css"/>
+    <script type="text/javascript" src="css_regex.js"></script>
+    <script type="text/javascript" src="css_regex_action.js"></script>
+
+</head>
+<body>
+
+
+    <div class="region">
+        <h2>Regular Expression Based CSS Syntax Coloring &amp; Format</h2>
+        <button class="skip" onclick="$I('project_info').style.display ='';">Click here to Show Project Infomation</button>
+
+        <table width="100%">
+            <tr>
+                <td>
+                    <div class="menu_container">  
+                        <ul class="navigation">  
+                            <li><a href="#">CSS</a></li>  
+                            <li style="display:none;"><a href="#">Setting</a></li>
+     
+                        </ul> 
+                    </div> 
+                </td>
+                <td></td>
+                <td>
+                    <div class="menu_container">  
+                        <ul class="navigation">  
+                            <li><a href="javascript:void(0);" onmouseover="SwitchResultPanel('display')">Display</a></li>  
+                            <li><a href="javascript:void(0);" onmouseover="SwitchResultPanel('text')">Text</a></li>
+                            <li><a href="javascript:void(0);" onmouseover="SwitchResultPanel('markup')">Markup</a></li>
+                        </ul> 
+                    </div> 
+                </td>
+            </tr>
+            <tr>
+                <td width="50%" class="left_panel">
+                    <div id="css_panel">
+                        <textarea wrap="off" id="original_css" title="Paste valid css code here.">
+/* Accessibility CSS */
+h2{ }
+h3{}
+* html .skip {display: block} 
+:root .skip {display: block}  
+.skip a {padding: 0 0.5em; display: inline; z-index: 2; text-decoration:none; position: absolute; width: 14em; left: -200em}
+.skip a:focus, .skip a:active {position: absolute; left: 0.5em; border: solid #333 2px; color: #fff; background: #555}
+.skip a:hover {cursor: default}
+
+h1 {
+margin:0;
+padding:0;
+display:none;
+position:absolute;
+top:0;
+left:-2000px;
+}
+
+
+/* Overall Settings */
+
+* BODY 
+{
+    /* Footer Settings */
+	background: url("/images/bg.jpg") no-repeat scroll center top #000000;
+	/* Footer Settings */
+    margin-top:0px;/* Footer Settings */
+    margin-bottom:0px  /* Footer Settings */;
+}
+
+#mainDiv 
+{
+    width:980px;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#ffffff;
+}
+
+.rightnav {width:300px;float:right;height:388px; margin-right:2px;}
+
+BODY, TD {font-family:arial;
+	      font-size: 12px; 
+	      color:#000;
+         line-height:18px;	}
+
+#tdLeftNav {}
+.tdContent {background-color:#ffffff;}
+.contentDiv {}
+.contentDiv_container {}
+
+A, A:link,/* Footer Settings */ A:visited {color:/* Footer Settings */#1E3E67}
+
+.header_logo{position:absolute; top:-73px; left:338px;}
+
+/* Footer Settings */
+#footer {
+	width:980px;
+	height:150px;
+	background-repeat:repeat-x;
+	text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#ffffff
+    }
+#footer_inside {width:980px;display:block;margin-left:auto;
+                margin-right:auto;padding-top:10px;text-align:left;}
+.footer 
+{
+    display:block;
+    font-family:arial;
+    font-size:11px;
+	color:#ffffff;
+	line-height:20px;
+	}
+
+a.footer:hover{
+	color: #cfb53b;
+}
+
+
+/* Print Settings */
+
+    @media print 
+    {}
+            .noprint {display:none;}
+    
+    
+    .page_title /* Footer Settings */ h2 {     
+        	color:#000;
+	        font-size   :22px;
+	        font-family
+	        :    
+	        
+	        arial;
+	        line-height:20px;
+	        text-decoration:none;
+	        display:block;
+	        margin-bottom:5px;
+	        font-weight:normal ;
+    }  
+
+/* Navigation */
+    .radmenu .horizontal .item {
+    height: 37px;
+}
+    .leftnav_closed {display:none;}
+
+    .nav_sectioncontent {width:195px;}
+    .nav_item_container {width:195px;height:24px;}
+    .nav_item_container_off {}
+    .nav_item_container_on {}
+	
+    A.nav_link, A.nav_link:visited
+    {
+        margin-left:10px;
+	    font-size : 11px;
+	    font-family:arial;
+	    font-weight:bold;
+        color: #FFFFFF;
+ 	    text-decoration: none;
+	    line-height:23px;
+	    width:100%;
+	    display:block;
+	    height:24px;	        
+    }
+    
+    .nav_container_depth_2 A.nav_link {margin-left:20px;color:#ffffff;font-weight:normal;}
+    
+   /*
+    .nav_container_depth_2.nav_item_container_off {}
+    .nav_container_depth_2.nav_item_container_on {}
+   */  
+   
+    .nav_container_depth_2 .nav_item_container_off {background-image:none;}
+    .nav_container_depth_2 .nav_item_container_on  {background-image:none;}
+    
+    .nav_container_depth_3 A.nav_link {margin-left:30px;color:#ff0000}
+    
+    A.nav_link:hover {color:#fff}
+    
+/* Dropdwon Menu */ 
+
+	.slide{}
+	.slide .vertical .item{height: 18px;}
+	
+	.slide .vertical .item a.link
+	{
+		width:150px; 
+		background-image:url(/images/dropdown_bg.gif);
+		background-repeat:repeat-x;
+		font-weight:bold;
+		color:#ffffff;
+	}
+	.slide .vertical .item a.link:hover
+	{background-image:url(/images/dropdown_bg_b.gif); color:#1e3e67;}
+    /* Sidebars */
+    
+     #divSidebars {width:140px;position:absolute;top:70px; left:100px;}    
+    .sidebar_links {margin:0px;padding:0px;list-style-type:none;margin-left:0px}
+    .sidebar_links LI {padding:0px;}
+    .sidebar_links A, .sidebar_links A:visited {display:block;
+                      padding-left:10px;
+	                  font-size : 11px;
+	                  font-family:arial;
+                      color: #fff;
+                      font-weight:bold;
+ 	                  text-decoration: none;
+ 	                  height:24px;
+ 	                  line-height:22px
+     }
+     .sidebar_links A:hover {color:#fff}
+    
+     .sidebar_links_horizontal_container {width:100%;clear:both;background-color:#102844;}
+     .sidebar_links_horizontal {width:100%;padding:5px 0px 5px 0px;}
+     .sidebar_links_horizontal LI {display:inline;margin:5px 10px 5px 10px;}
+     .sidebar_links_horizontal LI A {color:#fff;text-decoration:none; font-weight:bold;}
+     .sidebar_links_horizontal LI A:hover {color:#fff;text-decoration:underline;}
+
+
+
+
+/* Default datagrid Items */
+
+    .default_dgrd_header {background-color:#1e3e67;color:#fff;}
+    .default_dgrd TR TH{padding:4px;font-weight:bold;text-transform:uppercase}
+    .default_dgrd {width:100%;}
+    .default_dgrd TR TD, .default_dgrd TR TH{padding:4px;}
+
+    .default_dgrd_header A {text-decoration:none;color:#ffffff;font-weight:bold;font-size:12px;text-transform:uppercase;}
+    .default_dgrd_item TD {background-color:#FFFFFF;font-size:11px;}
+    .default_dgrd_alt TD {background-color:#E8E8E8;font-size:11px;}
+
+/* Rosters */
+    
+    
+
+/* Roster Grid */
+    /*
+    .roster_dgrd {width:100%;}
+    .roster_dgrd TR TD {padding:4px;}
+    .roster_dgrd_header {background-color:#000000;border:0;}
+    .roster_dgrd_header A {color:#ffffff;font-weight:bold;font-size:12px;text-transform:uppercase;}
+    .roster_dgrd_item TD {background-color:#FFFFFF}
+    .roster_dgrd_alt TD {background-color:#E8E8E8}
+    */
+    
+    .roster_pastrosters_ddl {font-size:8pt;}
+    .roster_team_photo_container {width:100%;margin-bottom:10px;}
+
+/* Staff Grid */
+    /*
+    .staff_dgrd {width:100%}
+    .staff_dgrd TR TD {padding:4px;}
+    .staff_dgrd_header {background-color:#000000;border:0;}
+    .staff_dgrd_header A, .staff_dgrd_header TD  {color:#ffffff;font-weight:bold;font-size:12px;text-transform:uppercase;}
+    .staff_dgrd_item {background-color:#ffffff}
+    .staff_dgrd_alt {background-color:#E8E8E8}
+    */
+    .staff_dgrd_category {font-weight:bold;background-color:#000000;color:#ffffff}
+
+/* Coaches Grid */
+
+    /*
+    .coaches_dgrd {width:100%}
+    .coaches_dgrd TR TD {padding:4px;}
+    .coaches_dgrd_header {background-color:#000000;border:0;}
+    .coaches_dgrd_header A, .staff_dgrd_header TD  {color:#ffffff;font-weight:bold;font-size:12px;text-transform:uppercase;}
+    .coaches_dgrd_item {background-color:#ffffff}
+    .coaches_dgrd_alt {background-color:#E8E8E8}
+    */
+    .coaches_dgrd_category {font-weight:bold;background-color:#000000;color:#ffffff}
+
+    .roster_coaches_title {margin-top:10px;margin-bottom:10px;font-weight:bold;}
+    .roster_coaches_dgrd {width:50%}
+    /*
+    .roster_coaches_dgrd TR TD {padding:4px;}
+    .roster_coaches_dgrd_header {background-color:#000000;border:0;}
+    .roster_coaches_dgrd_header A, .roster_coaches_dgrd_header TD  {color:#ffffff;font-weight:bold;font-size:12px;text-transform:uppercase;}
+    .roster_coaches_dgrd_item {background-color:#ffffff}
+    .roster_coaches_dgrd_alt {background-color:#E8E8E8}
+    */
+    .roster_coaches_dgrd_category {font-weight:bold;background-color:#000000;color:#ffffff}
+
+/* Schedule Grid */
+    /*
+    .schedule_dgrd {width:100%;}
+    .schedule_dgrd TR TD {padding:4px;}
+    .schedule_dgrd_header {background-color:#000000;border:0;}
+    .schedule_dgrd_header A, .schedule_dgrd_header TH {color:#ffffff;font-weight:bold;font-size:12px;text-transform:uppercase;padding:3px}
+    .schedule_dgrd_item {background-color:#ffffff}
+    .schedule_dgrd_alt {background-color:#E8E8E8}
+    */
+    
+    .schedule_home {font-weight:bold}
+    .schedule_neutral {font-style:italic}
+    .schedule_conference_denotation {width:20px;height:20px;background-color:#1e3e67}
+    .schedule_key_symbol {font-weight:bold}
+    .schedule_key_box TR TH {font-weight:bold;}
+    
+    .schedule_tournament_title {background-color:#222;color:#fff}
+    .schedule_tournament_game TD {background-color:#DFC3C3}
+	A.schedule_tournament_link, A.schedule_tournament_link:visited {color:#fff;text-decoration:none;}
+	A.schedule_tournament_link:hover {color:#fff;text-decoration:underline;}
+    
+/* Poll */
+
+    #divPoll {margin-top:10px;}
+    .poll_container {margin-left:10px;}
+    .poll_question {color:#ffffff;padding:5px 0px 5px 0px}
+    .poll_item TR TD {color:#ffffff;padding:5px 0px 0px 0px}
+    .poll_item TR TD INPUT {display:block;float:left;width:15px;}
+    .poll_item TR TD LABEL {display:block;float:left;width:160px;margin-left:5px}
+    
+    .poll_result_container {padding:10px;text-align:center;float:left;}
+    .poll_title_result {font-weight:bold;background-color:#000000;padding:5px;color:#ffffff}
+    .poll_image_result {margin-left:auto;margin-right:auto;}
+    .poll_submit_button_container {width:90%;text-align:right;padding-right:10px;}
+    
+    .poll_results_previous_container {float:right;}
+    .poll_results_previous_title {font-weight:bold;margin-bottom:10px}
+    .previouspoll_dgrd {width:280px;}
+    /*
+    .previouspoll_dgrd TR TD {padding:4px;}
+    .previouspoll_dgrd_header {background-color:#000000;border:0;}
+    .previouspoll_dgrd_header A {color:#ffffff;font-weight:bold;font-size:12px;text-transform:uppercase;}
+    .previouspoll_dgrd_header TD {color:#ffffff;font-weight:bold;font-size:12px;text-transform:uppercase;}
+    .previouspoll_dgrd_item {background-color:#ffffff}
+    .previouspoll_dgrd_alt {background-color:#E8E8E8}    
+    */
+    
+    .poll_answer {color:#fff;margin-bottom:5px;}
+    .poll_answer_bar {height:4px;margin-bottom:10px;}
+    .poll_view_full A {color:#fff;font-weight:bold;text-decoration:none;}    
+    
+/* Archive Grid */
+    /*
+    .archive_dgrd {width:100%;}
+    .archive_dgrd TR TD {padding:4px;}
+    .archive_dgrd_header {background-color:#000000;border:0;color:#ffffff;font-weight:bold;}
+    .archive_dgrd_header A, .archive_dgrd_header TD {color:#ffffff;font-weight:bold;font-size:12px;text-transform:uppercase;}
+    .archive_dgrd_item {background-color:#ffffff}
+    .archive_dgrd_alt {background-color:#E8E8E8}    
+    */
+
+/* Media Objects */
+    .media_object_image {background-color:#e6e6e6;text-align:center;width:auto}
+    .media_object_image_left {float:left;margin-right:10px;}
+    .media_object_caption {background-color:#e6e6e6;text-align:center;padding:3px;}
+    .media_object_rotator_controls {width:100%;text-align:right;margin-top:4px;}
+    .rotator_container {text-align:center;border:solid 1px #000000;padding:3px;background-color:#e6e6e6;}
+    
+/* Schedule Record Boxes (front and backend) */
+    .record_header_text {font-weight:bold;padding:3px;}
+    .record_table {width:440px;background-color:#e6e6e6;margin:10px;}
+    .record_header TD {background-color:#c2c2c2;font-weight:bold;text-align:center;}
+    .record_data TD {text-align:center;}    
+    
+/* SmartPlayerView Box */
+    #smartBox {
+        background-color:#fff;
+        padding:5px;
+        display:none;
+        position:absolute;
+        border:1px solid #000;
+        width:250px;
+        top:10px;
+    }    
+         
+/* Stories */
+    
+    .recent_headline_container
+    {
+		float:right; 
+		background-color:#1e3e67; 
+		width:300px;
+		min-height:280px;
+	}
+    /* More Headlines */
+    #divMoreHeadlines {width:385px;background-color:#021F3F;}
+    .divMoreHeadline_sport_ddl {margin:5px;text-align:right;color:#fff;font-weight:bold; display:none;}
+    .divMoreHeadline_sport_ddl SELECT {font-size:8pt;}
+    .divMoreHeadline_container { background-color:#102844; margin:0px 13px 5px;padding:6px 10px; min-height:42px;}
+    .alt {}
+    
+    .divMoreHeadline_link_container {}
+    .divMoreHeadline_sport_container
+        {
+            font-size:11px;
+            font-family:arial;
+            color: #ffffff;
+            font-weight:bold;
+            text-transform:none;
+        }
+    A.aMoreHeadline, A.aMoreHeadline:visited, A.aMoreHeadline:active
+    {
+        font-size : 12px;
+        color: #ffffff;
+	    font-weight:normal;
+        line-height:12px;	
+        font-family:arial;
+        display:block;
+    	text-decoration:none;
+    }
+    
+    a.aMoreHeadline:hover {	
+	    text-decoration:underline;
+	}    
+	
+    .divMoreHeadline_separator{display:none;}
+    .divMoreHeadline_morebox {display:none;padding:5px;color:#000;font-size:11px;width:95%}
+    .divMoreHeadline_morebox a.aMoreHeadline {display:inline}
+    
+    .divMoreHeadline_archive_container {padding-left:0px;padding-top:5px;padding-bottom:10px; display:none;}
+    .divMoreHeadline_archive_container A {text-transform:uppercase;color:#fff;text-decoration:none;font-weight:bold;}
+    
+    /* Main Stories */
+    
+    
+    A.topstory_headline, .topstory_headline,  A.topstory_headline:visited
+    {
+        	color:#FFF;
+	        font-size:21px;
+	        font-family:arial;
+	        line-height:20px;
+	        text-decoration:none;
+	        display:block;
+	        font-weight:bold;
+    }
+    
+      A.topstory_headline_alt, A.topstory_headline_alt:visited
+    {
+            color:#C80C16;
+	        font-size:21px;
+	        font-family:arial;
+	        line-height:20px;
+	        text-decoration:none;
+	        display:block;
+	        font-weight:bold;
+    }  
+    
+    .divTopStory_link_container{ padding:5px 0px 0px 15px;}
+    .divTopStory_link_container A {}
+    .divTopStory_link_container span {}
+    
+    .divTopStory_ReadMore {font-weight:bold;}
+    
+
+    .divTopStory_summary {padding:5px 20px 10px 20px;}
+
+    
+    
+    .divTopSTory_bigmedia_container{float:none}
+    .divTopStory_container {vertical-align:top}
+    
+    
+    /* ICS ROTATOR
+    .divTopStory_Rotate_ICS_Headlines {width:33.3333%;background-color:#333333}
+    .divTopStory_Rotate_ICS_Headlines A {color:#ffffff;text-decoration:none}
+    .divTopStory_Rotate_ICS_Headlines_selected {background-color:#cccccc}
+    .divTopStory_Rotate_ICS_Headlines_selected A {color:#ff0000}
+
+    .divTopStory_Rotate_ICS_Summary_container {display:none;}
+    .divTopStory_Rotate_ICS_Headlines {float:left;}    
+    
+    */
+    
+    /* CS ROTATOR
+    .divTopStory_Rotate_CS_Headlines {width:100%;background-color:#333333}
+    .divTopStory_Rotate_CS_Headlines A {color:#ffffff;text-decoration:none}
+    .divTopStory_Rotate_CS_Headlines_selected {background-color:#cccccc}
+    .divTopStory_Rotate_CS_Headlines_selected A {color:#ff0000}
+    */
+    
+    /* TV ROTATOR */
+    
+    .rptHeadlines_TV_container
+    {
+        height:35px;
+        z-index:99;
+        position:absolute;
+		top:220px;
+		left:210px;
+    }
+    
+    
+    .divTopStory_TV_container_bigmedia 
+    {
+        width:673px;
+        height:389px;
+        position:relative;
+        background:url(/images/wallpaper_def.gif) no-repeat;)
+    }
+    .divTopStory_Rotate_TV_Headlines_Image 
+    {
+        cursor:pointer;
+        border:solid 1px #828386;
+        padding:3px;
+        margin-left:15px;
+        float:left
+    }
+    
+    .divTopStory_TV_container
+    {
+		background:url(/images/mainstory_textbox.png) no-repeat	left top;
+		position:absolute;
+		width:275px;
+		height:96px;
+		top:220px;
+		z-index:50;
+	}
+    .divTopStory_sport_container
+    {
+		padding:5px 15px 0px;
+		color:#262c42;
+		font-weight:bold;
+		height:20px;
+		text-transform:uppercase;
+	}
+    
+    
+    .divTopStory_Rotate_TV_Headlines {float:left;}
+    .divTopStory_Rotate_TV_Headlines A {color:#000;text-decoration:none;float:left;}
+    .divTopStory_Rotate_TV_Headlines IMG.headlines_image{ display:inline;}
+    .divTopStory_Rotate_TV_Headlines IMG.headlines_image_selected{ display:none;}
+    
+    .divTopStory_Rotate_TV_Headlines_selected {}
+    .divTopStory_Rotate_TV_Headlines_selected A {color:#000;}
+    .divTopStory_Rotate_TV_Headlines_selected IMG.headlines_image{ display:none;}
+    .divTopStory_Rotate_TV_Headlines_selected IMG.headlines_image_selected{ display:inline;}  
+    
+/* Factlet */
+
+    .dyk_factlet_wrapper {width:100%;padding:10px}
+    .dyk_factlet_type_title {margin-top:10px;font-weight:bold;font-size:12pt;color:#ffffff}
+    .dyk_factlet_title {margin-top:10px;font-weight:bold;color:#ffffff}
+    .dyk_factlet_description {margin-top:10px;color:#ffffff}
+    .dyk_factlet_inner_wrapper {padding:5px;width:90%}
+   
+
+
+/* Scoreboard */
+
+    
+	.divScoreboard_overall_container {}
+	.divScoreboard_header {width:285px;height:33px;}
+	.divScoreboard_footer {}
+	
+    .divScoreboard_record_container{padding:5px 5px 5px 12px;width:280px;}
+    .divScoreboard_team_container{margin-top:10px;}
+
+    .divScoreboard_hometeam {float:left;width:200px;}
+    .divScoreboard_hometeam_score {float:left;width:80px}
+    
+    .divScoreboard_awayteam {float:left;width:200px}
+    .divScoreboard_awayteam_score {float:left;width:80px}    
+
+    .divScoreboard_date {color:#C5C5C7}
+    .divScoreboard_location{color:#fff}
+    .divScoreboard_hometeam{color:#fff}
+    .divScoreboard_hometeam_score{color:#fff}
+    .divScoreboard_awayteam{color:#fff}
+    .divScoreboard_awayteam_score{color:#fff}
+
+/* Calendar */
+
+    /* Calendar Sidebar */
+
+    .upcoming_calendar {}
+    #ctl00_upcoming1_calTop {width:260px;margin-left:12px;margin-top:10px;}
+    .upcoming_cal_overall {color:#000000;width:285px;}
+    .upcoming_cal_left_pane {width:285px;clear:both;text-align:center}
+    .upcoming_cal_right_pane {width:255px;height:150px;margin-left:12px;margin-top:5px;overflow:auto}
+
+    .upcoming_cal_title {background-color:#000;}
+    .upcoming_cal_title A {color:#fff;font-weight:bold;}
+    .upcoming_cal_title TR TD {color:#C3C4C6;font-weight:normal;}
+    
+    TH.upcoming_cal_dayheader {font-weight:bold;font-size:9px;background-color:#fff;color:#000000;text-align:center;text-transform:uppercase}
+    .upcoming_cal_today {background-color:#4f0000;}
+    
+    .upcoming_cal_selected {border:solid 1px #ffffff;background-color:#4f0000;}
+    .upcoming_cal_day {font-size:9px;background-color:#840107;text-decoration:none;color:#fff;text-align:center}
+    .upcoming_cal_day A {font-size:9px;color:#000;text-decoration:none;}
+    .upcoming_cal_next {color:#ffffff;text-align:center;}
+    .upcoming_cal_othermonth {background-color:#282828;text-decoration:none;}
+
+    .upcoming_cal_game_container {margin-bottom:8px;}
+    .upcoming_cal_maindate {color:#C4C4C4;font-weight:bold;margin-top:5px;margin-bottom:8px;display:block;}
+    .upcoming_cal_time {color:#C4C4C4;}
+    .upcoming_cal_sport {color:#C4C4C4;font-weight:bold;}
+    .upcoming_cal_opponent {color:#ffffff;}
+    .upcoming_cal_result {color:#ffffff;}
+    .upcoming_cal_hasevents {background-color:#FFE14F;}
+    
+    A.upcoming_full_schedule {color:#1e3e67;display:block;margin-left:5px;font-weight:bold; padding-top:10px;}
+
+    /* Upcoming Events */
+
+    #divUpcoming {width:285px;}
+    .divUpcoming_separator{}                  
+
+    .divUpcoming_Item_Container{}
+    .divUpcoming_sport 
+        {font-size : 10px;
+	     font-family:arial;
+    	 color: #B5B6B5;}
+    .divUpcoming_datetime 
+    {
+     	font-size : 9px;
+	    font-family:arial;
+    	color: #B5B6B5;   
+    }
+    .divUpcoming_opponent 
+    {
+    	font-size : 11px;
+	    font-family:arial;
+    	color: #C6CFDE;
+    }
+
+	a.composite_calendar_link {height:38px;width:108px; float:right;background:url(/images/events_schedule.gif) no-repeat left top;}
+		a.composite_calendar_link:hover {background:url(/images/events_schedule_b.gif) no-repeat left top;}
+
+    /* Composite Calendar */
+	.composite_cal_item {margin-bottom:7px;}
+    .composite_cal_title {background-color:#1e3e67;border:0px;}
+    
+    .composite_cal_title TR TD {color:#fff;padding:2px;font-weight:bold;text-align;left;}
+    .composite_cal_title TR TD A {color:#fff;}
+	
+	.composite_cal_dayheader {text-align:center;text-transform:uppercase;font-size:10px;background-color:#fff;color:#000;font-weight:bold;border:1px solid #505050}
+    
+    .composite_cal_othermonth {background-color:#71101B;text-decoration:none;border:1px solid #505050}
+    .composite_cal_selected {border:solid 1px #ffffff;background-color:#4f0000;}
+    .composite_cal_day {background-color:#fff;text-decoration:none;border:1px solid #505050;text-align:left;font-weight:bold;}
+    .composite_cal_day A {text-decoration:none;font-weight:normal;}
+	.composite_cal_day A:hover {text-decoration:underline;}
+    .composite_cal_next {color:#CD9936}
+	.composite_cal_today {background-color:#fff}
+    
+/* upcoming_group_event */
+	.upcoming_group_showing_all_events{display:none;}
+    .upcoming_calendar { height:296px; margin-bottom: 5px; }
+    .upcoming_group_overall_container{ height:240px; width:673px; overflow:auto;}
+    
+	.upcoming_group_container{}
+	
+	.upcoming_group_date
+	{
+		clear:both;
+		background:#919499 url(/images/calendar_header_bg.gif) no-repeat left bottom;
+		color:#fff;
+		padding-left:9px;
+		height:47px;
+
+		line-height:23px;
+		font-weight:bold}	}}
+
+	.upcoming_group_header_container{ clear:both; background-color:#611017; color:#fff; height:23px;vertical-align:middle}
+	.upcoming_group_overall_container .divUpcoming_Item_Container{clear:both;  color:#fff; background-color:#1e3e67; min-height:25px;}
+	.upcoming_group_overall_container .divUpcoming_Item_Container_alt{clear:both;  color:#fff; background-color:#183351;min-height:25px;}
+	
+	.upcoming_group_overall_container .divUpcoming_Item_Container DIV, 
+	.upcoming_group_overall_container .divUpcoming_Item_Container_alt DIV  ,
+	.upcoming_group_overall_container  .divUpcoming_sport,
+
+	.upcoming_group_overall_container .divUpcoming_time >
+	.upcoming_group_overall_container .divUpcoming_location,  
+	.upcoming_group_overall_container .divUpcoming_opponent{width:170px; color:#fff;} 
+	
+	           
+/* upcoming_recent_event */
+	.divRecent_header_container{background-color:#0E2034; height:21px; color:#ffffff;}
+	.divRecent_header_container DIV { line-height:21px;float:left;color:#ffffff;margin-left:9px; border-right:2px solid #1e3e67;}
+	.divRecent_header_sport{ width:170px; border-right:;}
+	.divRecent_header_datetime{width:130px; }
+	.divRecent_header_result{width:110px;border-right:none !important;}  
+	.divRecent_header_opponent{width:165px;} 
+	
+	.upcoming_recent_overall_container{height:220px; width:673px; overflow:auto;}
+	.divUpcoming_sport_ddl{display:none;}
+	.divRecent_Item_Container{clear:both;  color:#fff; background-color:#1e3e67; height:21px; padding:2px 0px;}
+	.divRecent_Item_Container.alt{clear:both;  color:#fff; background-color:#183351; height:25px;}
+	
+	.divRecent_Item_Container DIV {font-size:12px; float:left; line-height:23px;}
+	.upcoming_recent_overall_container .divRecent_sport{ margin-left:9px; width:180px; color:#fff;}
+	.upcoming_recent_overall_container .divRecent_datetime{width:140px; color:#fff;}
+	.upcoming_recent_overall_container .divRecent_result{width:120px; color:#fff;}  
+	.upcoming_recent_overall_container .divRecent_opponent{width:180px; color:#fff;} 
+/* Inside Story Page */
+    
+    #emailLink {}
+    .story_wrapper {padding-left:0px;padding-right:0px;}
+    .story_inner_wrapper {background-color:#fff;padding-left:5px;padding-right:5px;padding-top:5px;}
+    .story_byline {font-size:12px;font-style:italic;margin-top:10px;}
+    .story_date {margin-bottom:10px;padding-left:10px;}
+    .story_content {padding:0px 10px 0px 10px;}
+    .story_subheadline {}
+    .story_link_container {padding-top:10px;}
+    .story_headline
+    {
+        	color:#000000;
+	        font-size:22px;
+	        font-family:arial;
+	        line-height:22px;
+	        text-decoration:none;
+	        display:block;
+	        margin-left:20px;
+	        margin-bottom:10px;
+    }
+
+/* Newsletter Stuff */
+     .newsletter_story_container {padding-left:10px;padding-right:10px;}
+     .newsletter_story_sport_container {font-size:10px;margin-bottom:10px;margin-top:5px;}
+     .newsletter_story_headline {font-size:12px;font-weight:bold;}
+     .newsletter_story_headline_container {}
+     .newsletter_story_summary {font-size:10px;}
+     
+     .newsletter_signup_container {border:solid 1px #ff0000;padding:3px 10px 3px 10px;}
+ 
+ /* Hall of Fame */
+     .hof_table TR TD {padding:3px;}
+     .hof_header {background-color:#597c9c;font-weight:bold;color:#ffffff;}
+     .hof_item {background-color:#F0E9E6;}
+     .hof_graduating_class {	font-size:11px; 
+	    font-family:arial;
+	    color:#000;
+	    height:25px;}
+     .hof_induction_class {}
+     .hof_sports {}
+     .hof_detail_name {}
+     .hof_logo{}
+ 
+ /* AOW */
+ 	.div_aow_container
+ 	{
+		width:190px;
+		height:157px;
+		padding-left:110px;
+		background:url(/images/rightnav_aow.gif) no-repeat left top;
+	}
+    .aow_header {background-repeat:no-repeat;height:33px;width:285px;display:none;}
+    .aow_footer {}
+    .aow_wrapper {}
+    .aow_title {display:none;}
+    .aow_image { background:url(/images/wallpaper_def.gif) no-repeat left top; height:107px; width:85px;}
+    .aow_player_pos_num {color:#fff}
+    .aow_sbs_table {width:190px;margin-top:10px;}
+    .aow_highlights {display:none;}
+    
+    .aow_player {font-weight:bold;margin-top:5px;width:100%;text-align:center;float:left;}
+    .aow_player_info {font-style:italic;width:100%;text-align:center}
+ 
+    /* Awards page */
+ 
+    .aow_full_name {font-size:12pt;display:block;margin-bottom:2px;}
+    .aow_full_sport {font-size:10pt;display:block;margin-bottom:5px;}
+    .aow_full_link {font-size:8pt;display:block;margin-bottom:5px;}
+    .aow_full_container{padding-left:20px;}
+    .aow_full_previous {font-size:8pt;display:block;margin-bottom:5px;font-weight:bold}
+    
+    .aow_dgrd {width:60%;}
+    /*
+    .aow_dgrd TR TD {padding:4px;}
+    .aow_dgrd_header {background-color:#000000;border:0;}
+    .aow_dgrd_header A, .schedule_dgrd_header TD {color:#ffffff;font-weight:bold;font-size:12px;text-transform:uppercase;}
+    .aow_dgrd_item {background-color:#ffffff}
+    .aow_dgrd_item A {color:#000}
+    .aow_dgrd_alt {background-color:#E8E8E8}
+    .aow_dgrd_alt A {color:#000}    
+    */ 
+ 
+ /* Flash Collection */
+ 
+    .flash_collection_title {padding:10px;text-align:center;}
+    .flash_collection_title_container {width:780px;height:50px;background-color:#03366F;font-family:arial;color:#fff;font-size:20px;font-weight:bold;}
+  
+    .media_lightbox_container {background-color:#000000;
+        	filter:alpha(opacity=50);
+	        -moz-opacity:0.50;
+	        opacity: 0.50;
+	        text-align:center;
+     }
+     .media_lightbox_title {color:#ffffff;font-size:12pt;padding:10px}
+
+
+/* Ads */
+
+.ad_spot_affiliation {margin-bottom:20px;}
+.ad_footernav{float:left;}
+.ad_rightnav{float:left; margin-right:4px; }
+.ad_carousel{float:left; margin-right:5px;}
+
+/*Youtube*/
+
+
+.video_container{height:230px; width:300px; background:#10213f url(/images/rightnav_video.gif) no-repeat left top; margin-bottom:2px;}
+
+.video_header {height:40px;width:370px; display:none;}
+
+.youtube_container {margin-left:0px;}
+
+.youtube_player{height:230px; width:300px;}
+
+.youtube_player object { height:210px; width:239px;}
+
+.youtube_player embed { height:230px; width:300px;}
+
+.youtube_list_container {margin-bottom:0px;overflow:auto; display:none;}
+
+.youtube_list_header { display:none;}
+
+.youtube_date {color:#888;font-size:11px;}
+
+.youtube_title {color:#fff;font-weight:bold;font-size:11px;line-height:11px;}
+
+.youtube_vidlink_container {font-size:11px;}
+
+.youtube_item_wrapper {margin-top:5px;}
+
+.youtube_list_container { color:#fff; }
+
+.youtube_list_container img { width:75px; margin-right:5px;}
+.youtube_list_footer{ display:none;}
+
+/* Carousel */
+
+    .stepcarousel{position: relative; /*leave this value alone*/
+
+    border: 2px solid #ffffff;
+
+    background-color:#193657;
+
+    overflow: scroll; /*leave this value alone*/
+
+    width: 976px; /*Width of Carousel Viewer itself*/
+
+    height: 119px; /*Height should enough to fit largest content's height*/
+
+    }
+
+
+
+    .stepcarousel .belt{
+
+    position: absolute; /*leave this value alone*/
+
+    left: 0;
+
+    top: 0;
+
+    }
+
+
+
+    .stepcarousel .panel{
+
+    float: left; /*leave this value alone*/
+
+    overflow: hidden; /*clip content that go outside dimensions of holding panel DIV*/
+
+    margin-left: 46px; /*margin around each panel*/
+    display:inline;
+
+    width: 920px; /*Width of each panel holding each content. If removed, widths should be individually defined on each content DIV then. */
+
+    padding:8px 0px;
+
+    }
+
+
+
+</textarea>
+                    </div>
+                    <div id="setting_panel">
+                    
+                    </div>
+                </td>
+                <td  class="center_panel"><button class="punch" onclick="ForamtCss();" title="Click to format, view result on right">Format</button></td>
+                <td width="50%" class="right_panel">
+                
+                    <div id="display_panel" class="regex_css_display_container" >
+                        <div id="regex_css_display" class="ider_css_format_style" ></div>
+                    </div>
+                    <div id="text_panel" style="display:none;">
+                        <textarea id="regex_css_text" wrap="off" ></textarea>
+                    </div>
+                    <div id="markup_panel" style="display:none;">
+                        <textarea id="regex_css_markup"  wrap="off" ></textarea>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+   
+     
+    <div id="project_info" style="display:none;">
+        <div  class="modal_window" >
+            
+        </div>
+        <div class="project_info_conatiner"  onclick="$I('project_info').style.display = 'none';" title="Click to close">
+            
+            
+            <div class="project_info" onclick="$I('project_info').style.display = '';">
+                 <h2>
+                    Project Information
+                </h2>
+                 <div class="project_info_content">
+           
+            <div>
+                <h3>About Project</h3>
+                My purpose of building this project is for formating CSS codes and posting colorful CSS codes on the website, the color of the text for programmers is really meaningful, and I also want the color for the code to easily change.
+                <ul>
+                    <li>
+                        All syntax searching and replacing are based on regular expression.
+                    </li>
+                    <li>
+                        Using style sheet instead of inline style, makes it easy for you to create the style for the codes you like.
+                    </li>
+                    <li>
+                        This project only format CSS codes, it would not check the validation for CSS, you may <a href="http://jigsaw.w3.org/css-validator/">validate CSS here</a>.
+                    </li>
+                    <li>
+                        Browser Compatibility
+                        <div style="background-color:#FFFFFF; display:table; padding:7px;">
+                            <img title="Internet Explorer" alt="Internet Explorer" src="http://www.w3schools.com/images/incompatible_ie.gif" />
+                            <img title="Firefox" alt="Firefox" src="http://www.w3schools.com/images/compatible_firefox.gif" />
+                            <img title="Opera" alt="Opera" src="http://www.w3schools.com/images/compatible_opera.gif" />
+                            <img title="Google Chrome" alt="Google Chrome" src="http://www.w3schools.com/images/compatible_chrome.gif" />
+                            <img title="Safari" alt="Safari" src="http://www.w3schools.com/images/compatible_safari.gif" />
+                        </div>
+                        This project has used Javascript Getter, isArray, so it is not compatible with IE 6-8
+                    
+                    </li>
+                </ul>
+                
+                Paste CSS code in left panel, then click Format button, the project will return to the colored and formated CSS in right panels; move mouse over the navigations to switch the result panels.
+            </div>
+            <div>
+            <h3>About Next</h3>
+                I would like to add following new features to the next version of this project:
+               <ul>
+                    <li>
+                        <dt>Format Setting</dt>
+                        <dd>More format style options will be available, just like this project: <a href="http://www.lonniebest.com/FormatCSS/">Format CSS Online</a>.</dd>
+                    </li>
+                    <li>
+                        <dt>Selector Specification</dt>
+                        <dd>Type, id, class, pesudo, each different selector will be styled with different colors, to make selectors more specific, check <a href="http://www.w3.org/TR/CSS2/selector.html">Selector Patterns</a> here.</dd>
+                    
+                    </li>
+                    <li>
+                        <dt>Color Values</dt>
+                        <dd>Match and style the color values, which includes Hexadecimal Colors, RGB Colors, RGBA Colors, Named Colors etc., Check <a href="http://www.w3schools.com/cssref/css_colors_legal.asp">CSS Colors</a> here.</dd>
+                        
+                    </li>
+                    <li>
+                        <dt>Measurement Values</dt>
+                        <dd>Match and style the CSS units, include Percentage, Point, Pixels etc., check <a href="http://www.w3schools.com/cssref/css_units.asp">CSS Units</a> here</dd>
+                    </li>
+                    <li>
+                        <dt>Vendor Support</dt>
+                        <dd>Match and style browser vendor provided CSS properties and values.</dd>
+                    </li>
+                </ul>
+                   
+            </div>
+            <div>
+              <h3>About References </h3>
+
+                <ul style="font-size:12px;">
+                    <li><a href="http://robertnyman.com/javascript/javascript-getters-setters.html#regular-getters-and-setters">Testing getters and setters, and Object.defineProperty</a></li>
+                    <li><a href="http://kangax.github.com/es5-compat-table/">ECMAScript 5 compatibility table</a></li>
+                    <li><a href="http://www.bennadel.com/blog/2198-Special-References-In-JavaScript-s-String-replace-Method.htm">Special $ References In JavaScript's String.replace() Method</a></li>
+                    <li><a href="http://markdotto.com/playground/3d-text/">CSS 3D Text</a></li>
+                    <li><a href="http://nettuts.s3.amazonaws.com/819_megamenu/demo/index.html">Navigation Menu</a></li>
+                    <li><a href="http://line25.com/wp-content/uploads/2011/form/demo/index.html">Stylish Contact Form with HTML5 &amp; CSS3</a></li>
+                    <li><a href="http://hellohappy.org/css3-buttons/">CSS3 buttons</a></li>
+                </ul>
+           </div>  
+
+            <div>
+                <h3>About Me</h3>
+                <a href="http://about.me/ider" target="_blank">Ider Zheng</a>, my career aspirations is to be a programmer.
+                <div>
+                    If you have any questions or advices, or you want report bugs for this project, please <a href="http://www.cnblogs.com/ider/archive/2011/07/23/regex_highlight_for_cpp_codes.html">leave your comments here</a>, or <a href="mailto:ider.cs@gmail.com">send email to me</a>.
+                </div>
+            </div>
+            
+            <hr />    
+            <p>&copy;2011 Copyright <a href="http://about.me/ider" target="_blank">Ider Zheng</a></p>
+
+        </div> 
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

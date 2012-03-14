@@ -1,0 +1,75 @@
+Analysis for CSS comment:
+/\*(.|\s)*?\*/
+
+
+Analysis for CSS definition:
+([^\{\}\s;\/][^\{\};]*){([^\{\}]*)}
+
+
+\1: selector names
+\2: CSS properties
+
+(?# 
+    Selector names include but not limited to type, id, class, descendant, child, attribute, pseudo-class.
+    Check css selector pattern here: 
+        http://www.w3.org/TR/CSS2/selector.html
+        http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/
+)
+(?# 
+    If the name use attribute selector, '{' '}' ';' may appear at attribute value, e.g.: input[value*=";"] .
+    Otherwise those characters would not appear in names.
+)
+
+    
+    Analysis for (\1)selector names:
+    ([^\s{},](?:[^,{}]*[^,{}\s])?)((?:\s*(,|$))|(?=\s*{))   (?# Globe use )
+    ([^\s,](?:[^,]*[^,\s])?)\s*(,|$)    (?# Matching in selector names result)
+    
+    \1: selector combination
+    \2: seperator
+    
+        Analysis for (\1)selector combination:
+        
+        
+        
+    
+    
+    Analysis for (\2)CSS properties:
+    ([\w\-]+)\s*:\s*([^;{}]*[^;{}\s])(?:\s*;|(?=\s*(?=$|})))    (?# Globe use )
+    ([\w\-]+)\s*:\s*([^;]*[^;\s])(?=\s*(?:;|$)) (?# Matching in CSS properties result)
+    
+    \1: property name
+    \2: property values
+    
+    (?# 
+        The property name would contains neither number nor underline,
+        uppercase characters are not recommanded but they are allowed.
+        So to make more specific, it may use [A-Za-z\-] instead of [\w\-] to math property name, 
+        but to make it easy, I just use [\w\-] 
+    )
+    (?# We may use "\1:\2;" in editor replacement to trim the property.)
+    
+        
+        Analysis for (\1)property name:
+        .+
+        
+        Analysis for (\2)property values:
+        
+        
+        
+      
+      
+      
+      
+      
+      
+/\*(?:.|\s)*?\*/|([^\{\}\s;][^\{\};]*){([^\{\}]*)}
+        
+        
+        
+        
+        
+        
+        
+
+        

@@ -1,0 +1,52 @@
+.ider_css_format_style
+{
+
+}
+
+/* CSS definitions for comments */
+.ider_css_format_style .comment
+{
+    color: #009900;
+}
+
+/* CSS definitions for selector */
+.ider_css_format_style .selector
+{
+     color: #FF0000;
+}
+
+.ider_css_format_style .selector.type, .ider_css_format_style .selector .type
+{
+    
+}
+
+.ider_css_format_style .selector.class, .ider_css_format_style .selector .class
+{
+    
+}
+
+.ider_css_format_style .selector.pseudo, .ider_css_format_style .selector .pseudo
+{
+    
+}
+
+/* CSS definitions for property */
+.ider_css_format_style .property
+{
+    color:#FF99FF;
+}
+
+.ider_css_format_style .property.name, .ider_css_format_style .property .name
+{
+    color:#0099FF;
+}
+
+.ider_css_format_style .property.value, .ider_css_format_style .property .value
+{
+    color:#FF9900;
+}
+
+.ider_css_format_style .property.name.vendor
+{
+    
+}
